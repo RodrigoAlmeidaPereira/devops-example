@@ -1,10 +1,14 @@
 - hosts: localhost
 
   tasks:
-    - name:
+    - git:
+        repo: https://github.com/RodrigoAlmeidaPereira/devops-example.git
+        dest: /home/ubuntu/devops
+
+    - name: build docker image
       docker_image:
         name: web-server-devops-image
-        path: .
+        path: /home/ubuntu/devops
         state: build
         force: yes
 
