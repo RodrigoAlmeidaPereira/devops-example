@@ -7,7 +7,7 @@ app = Flask(__name__)
 # default route
 @app.route('/')
 def index():
-    return 'Hello World!'
+    return 'Hello World! I am Rodrigo!'
 
 # function for responses
 def results():

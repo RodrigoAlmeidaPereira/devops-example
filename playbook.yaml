@@ -1,0 +1,17 @@
+- hosts: localhost
+
+  tasks:
+    - name:
+      docker_image:
+        name: web-server-devops-image
+        path: .
+        state: build
+        force: yes
+
+    - name: executing web-server devops example
+      docker_container:
+        name: web-server-devops-container 
+        image: web-server-devops-image
+        state: started
+        ports:
+          - "5000:5000"
